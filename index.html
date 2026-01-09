@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Download videos from YouTube, Instagram, TikTok, Facebook, and more. Fast, free, and easy to use social media video downloader.">
+    <meta name="keywords" content="video downloader, social media, YouTube, Instagram, TikTok, download videos">
+    <meta name="author" content="Rana Moeen">
+    <meta name="theme-color" content="#6366f1">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Social Media Video Downloader">
+    <meta property="og:description" content="Download videos from your favorite social media platforms instantly">
+    <meta property="og:type" content="website">
+
+    <title>Social Media Video Downloader | Download Videos Instantly</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🎬</span>
+                <span>VideoGrab</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Download Videos from Any Platform</h1>
+            <p class="hero-subtitle">
+                Fast, free, and easy. Download videos from YouTube, Instagram, TikTok, Facebook, and more with just one
+                click.
+            </p>
+        </div>
+    </section>
+
+    <!-- Downloader Section -->
+    <section class="downloader">
+        <div class="downloader-container">
+            <div class="input-group">
+                <label for="video-url-input" class="input-label">Enter Video URL</label>
+                <div class="input-wrapper">
+                    <input type="text" id="video-url-input" class="url-input"
+                        placeholder="Paste your video link here (YouTube, Instagram, TikTok, etc.)" autocomplete="off">
+                    <button id="download-btn" class="download-btn">
+                        <span id="btn-text">Download</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Platform Indicator (Hidden by default) -->
+            <div id="platform-indicator" class="platform-indicator hidden">
+                <span class="platform-icon" id="platform-icon">📱</span>
+                <span id="platform-name">Platform detected</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="features-container">
+            <h2 class="section-title">Why Choose VideoGrab?</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">
+                        Download your favorite videos in seconds. Our optimized servers ensure the fastest download
+                        speeds possible.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Multiple Platforms</h3>
+                    <p class="feature-description">
+                        Support for YouTube, Instagram, TikTok, Facebook, Twitter, and many more social media platforms.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">High Quality</h3>
+                    <p class="feature-description">
+                        Download videos in the highest quality available, from 720p to 4K resolution when supported.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Safe & Secure</h3>
+                    <p class="feature-description">
+                        Your privacy matters. We don't store your data or track your downloads. 100% secure and private.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Fully Responsive</h3>
+                    <p class="feature-description">
+                        Works perfectly on all devices - desktop, tablet, and mobile. Download anywhere, anytime.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3 class="feature-title">100% Free</h3>
+                    <p class="feature-description">
+                        No hidden fees, no subscriptions, no limits. Download unlimited videos completely free forever.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="features">
+        <div class="features-container">
+            <h2 class="section-title">How It Works</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">1️⃣</div>
+                    <h3 class="feature-title">Copy Video URL</h3>
+                    <p class="feature-description">
+                        Find the video you want to download and copy its URL from your browser's address bar.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">2️⃣</div>
+                    <h3 class="feature-title">Paste & Detect</h3>
+                    <p class="feature-description">
+                        Paste the URL into our downloader. We'll automatically detect the platform and video details.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">3️⃣</div>
+                    <h3 class="feature-title">Download & Enjoy</h3>
+                    <p class="feature-description">
+                        Click the download button and save the video to your device. It's that simple!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-author">Created by Rana Moeen</p>
+
+            <!-- Contact Section -->
+            <div class="contact-section" id="contact">
+                <div class="contact-grid">
+                    <a href="mailto:ranamoeenodeen@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ranamoeenodeen@gmail.com</span>
+                    </a>
+                    <a href="tel:+923497409809" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+923497409809</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rana-moeen-o-deen-114781331/" target="_blank"
+                        class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/ranamoeen95" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <p class="footer-text">
+                &copy; 2025 VideoGrab. All rights reserved. Download responsibly and respect copyright laws.
+            </p>
+            <ul class="footer-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
