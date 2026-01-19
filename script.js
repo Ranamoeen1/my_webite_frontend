@@ -11,7 +11,7 @@
 // ============================================
 // Change this to your Hugging Face Space URL after deployment
 // Example: 'https://user-space.hf.space'
-const API_BASE_URL = 'https://ranamoeen1-vedio-downloader.hf.space';
+const API_BASE_URL = 'https://ranamoeen1-hd-video-save.hf.space';
 
 // ============================================
 // DOM ELEMENTS
