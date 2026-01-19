@@ -60,8 +60,15 @@ const platforms = {
         icon: '👥',
         patterns: [
             /facebook\.com\/.*\/videos\/(\d+)/,
-            /fb\.watch\/([a-zA-Z0-9_-]+)/,
-            /facebook\.com\/watch\/\?v=(\d+)/
+            /facebook\.com\/watch\/\?v=(\d+)/,
+            /facebook\.com\/reel\/(\d+)/,
+            /facebook\.com\/reels\/(\d+)/,
+            /facebook\.com\/share\/[rvp]\/([a-zA-Z0-9_-]+)/,
+            /facebook\.com\/groups\/[^\/]+\/posts\/(\d+)/,
+            /facebook\.com\/[^\/]+\/posts\/([a-zA-Z0-9_-]+)/,
+            /facebook\.com\/story\.php\?story_fbid=([a-zA-Z0-9_-]+)/,
+            /facebook\.com\/permalink\.php\?story_fbid=([a-zA-Z0-9_-]+)/,
+            /fb\.watch\/([a-zA-Z0-9_-]+)/
         ],
         color: '#1877F2'
     },
