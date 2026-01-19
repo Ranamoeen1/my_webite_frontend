@@ -226,7 +226,7 @@ async function downloadVideo(url, platform) {
         );
 
         // Download the file
-        const fileUrl = data.download_url;
+        const fileUrl = data.download_url.startsWith('http') ? data.download_url : `${API_BASE_URL}${data.download_url}`;
         const a = document.createElement('a');
         a.href = fileUrl;
         a.download = data.filename;
