@@ -181,7 +181,7 @@ function setLoadingState(isLoading) {
     if (isLoading) {
         downloadBtn.classList.add('loading');
         downloadBtn.disabled = true;
-        btnText.innerHTML = '<span class="spinner"></span>';
+        btnText.innerHTML = '<span class="spinner"></span> <span id="loading-msg">Fetching...</span>';
     } else {
         downloadBtn.classList.remove('loading');
         downloadBtn.disabled = false;
@@ -196,6 +196,17 @@ function setLoadingState(isLoading) {
  */
 async function downloadVideo(url, platform) {
     setLoadingState(true);
+
+    // Dynamic message timer
+    const msgTimer = setTimeout(() => {
+        const msg = document.getElementById('loading-msg');
+        if (msg) msg.textContent = 'Almost there...';
+    }, 10000);
+
+    const longMsgTimer = setTimeout(() => {
+        const msg = document.getElementById('loading-msg');
+        if (msg) msg.textContent = 'Large video detected, please wait...';
+    }, 20000);
 
     try {
         // Call the backend API
@@ -277,6 +288,8 @@ async function downloadVideo(url, platform) {
             );
         }
     } finally {
+        clearTimeout(msgTimer);
+        clearTimeout(longMsgTimer);
         setLoadingState(false);
     }
 }
