@@ -208,6 +208,10 @@ async function downloadVideo(url, platform) {
         if (msg) msg.textContent = 'Large video detected, please wait...';
     }, 20000);
 
+    // Set up timeout controller
+    const controller = new AbortController();
+    const fetchTimeout = setTimeout(() => controller.abort(), 55000); // 55s timeout
+
     try {
         // Call the backend API
         const response = await fetch(`${API_BASE_URL}/api/download`, {
@@ -215,6 +219,7 @@ async function downloadVideo(url, platform) {
             headers: {
                 'Content-Type': 'application/json',
             },
+            signal: controller.signal,
             body: JSON.stringify({
                 url: url,
                 quality: 'best'
@@ -232,10 +237,6 @@ async function downloadVideo(url, platform) {
         }
 
         const data = await response.json();
-
-        if (!response.ok || !data.success) {
-            throw new Error(data.error || 'Download failed');
-        }
 
         // Show success message
         showNotification(
@@ -270,8 +271,12 @@ async function downloadVideo(url, platform) {
     } catch (error) {
         console.error('Download error:', error);
 
-        // Check if backend is running
-        if (error.message.includes('fetch') || error.message.includes('Failed to fetch')) {
+        if (error.name === 'AbortError') {
+            showNotification(
+                '⏱️ The server is taking too long to respond. This video might be too large or currently unavailable. Please try again or try another link.',
+                'error'
+            );
+        } else if (error.message.includes('fetch') || error.message.includes('Failed to fetch')) {
             showNotification(
                 '❌ Connection lost. The server might be busy or restarting. Please wait a moment and try again.',
                 'error'
@@ -290,6 +295,7 @@ async function downloadVideo(url, platform) {
     } finally {
         clearTimeout(msgTimer);
         clearTimeout(longMsgTimer);
+        clearTimeout(fetchTimeout);
         setLoadingState(false);
     }
 }

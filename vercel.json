@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "videograb",
+  "name": "social-media-video-downloader",
   "builds": [
     {
       "src": "index.html",
