@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "video-downloader-frontend",
+  "name": "videograb",
   "builds": [
     {
       "src": "index.html",
